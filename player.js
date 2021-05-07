@@ -9,6 +9,7 @@ class Player {
         this.y=y;
         this.radius=radius;
         this.body=Bodies.circle(x,y,radius,option)
+        this.animation=loadAnimation("images/player1.png","images/player2.png","images/player3.png")
         World.add(world,this.body);
 
     }
@@ -19,12 +20,12 @@ class Player {
         translate(pos.x,pos.y)
         rotate(angle)
         ellipseMode (CENTER)
-        ellipse(0,0,this.radius,this.radius);
+        animation(this.animation,0,0,this.radius,this.radius);
         pop()
     }
     move(a,b){
-        this.body.x=this.body.x+a 
-        this.body.y=this.body.y+b
+        this.body.position.x=this.body.position.x+a 
+        this.body.position.y=this.body.position.y+b
 
 
     }
